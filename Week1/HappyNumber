@@ -1,0 +1,21 @@
+bool isHappy(int n) {
+    if(n == 4)
+        return false;
+
+    int temp = n;
+    int digit, sum = 0;
+
+    while(temp != 0)
+    {
+        digit = temp % 10;
+        sum += digit * digit;
+        temp /= 10;
+    }
+
+    if(sum == 1)
+    {
+        return true;
+    }
+
+    return isHappy(sum);
+}
